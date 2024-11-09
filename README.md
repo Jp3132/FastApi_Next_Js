@@ -4,7 +4,7 @@ In this article, you will learn how to seamlessly integrate a FastAPI project in
 
 ## Topics Covered
 
-- Running the FastAPI and Next.js Projectssssss
+- Running the FastAPI and Next.js Projectssssssssssss
 - Setup the FastAPI and Next.js Projects
     - Bootstrap the Next.js Project
     - Setup the FastAPI Project
