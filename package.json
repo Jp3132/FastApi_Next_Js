@@ -4,9 +4,7 @@
     "next-dev": "next dev",
     "dev": "concurrently \"pnpm run next-dev\" \"pnpm run fastapi-dev\"",
     "build": "next build",
-    "start": "next start",
-    "dev": "next dev"
-}
+    "start": "next start"
   },
   "dependencies": {
     "@types/node": "20.2.5",
