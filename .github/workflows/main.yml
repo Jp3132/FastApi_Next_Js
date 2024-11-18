@@ -1,0 +1,25 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 'Login to Azure'
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: 'Build and push Docker image to ACR'
+        run: |
+          IMAGE_NAME=my-image-name:$(date +%s)
+          docker build . --file Dockerfile --tag ${{ secrets.REGISTRY_LOGIN_SERVER }}/$IMAGE_NAME
+          docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/$IMAGE_NAME
